@@ -1,8 +1,12 @@
+package chat;
+
+import packet.OPacket;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class ClientHandler {
+public class ClientLoader {
 
     private static Socket socket;
 
@@ -12,6 +16,17 @@ public class ClientHandler {
         handle();
         end();
 
+    }
+
+    public static void sendPacket(OPacket packet) {
+        try {
+            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+            dos.writeShort(packet.getId());
+            packet.write(dos);
+            dos.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void connect() {
