@@ -30,4 +30,10 @@ public class PacketAuthorize extends OPacket {
     public void read(DataInputStream dis) throws IOException {
 
     }
+
+    @Override
+    public void handle() {
+
+    }
+
 }

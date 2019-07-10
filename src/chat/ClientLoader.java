@@ -1,6 +1,7 @@
 package chat;
 
 import packet.OPacket;
+import packet.PacketAuthorize;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -14,6 +15,10 @@ public class ClientLoader {
 
         connect();
         handle();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
         end();
 
     }
@@ -38,13 +43,7 @@ public class ClientLoader {
     }
 
     private static void handle() {
-        try {
-            DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-            dos.writeInt(117);
-            dos.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sendPacket(new PacketAuthorize("Max"));
     }
 
     private static void end() {
