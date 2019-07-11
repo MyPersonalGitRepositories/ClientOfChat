@@ -43,7 +43,7 @@ public class ClientLoader {
     }
 
     private static void handle() {
-        sendPacket(new PacketAuthorize("Max"));
+        sendPacket(new PacketAuthorize("Max " + System.currentTimeMillis()));
     }
 
     private static void end() {
