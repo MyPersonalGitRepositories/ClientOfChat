@@ -35,6 +35,6 @@ public class PacketMessage extends OPacket {
 
     @Override
     public void handle() {
-        System.out.println(String.format("[%s] %s", sender, message));
+        System.out.println(String.format("[%s]: %s", sender, message));
     }
 }
