@@ -36,7 +36,7 @@ public class ClientLoader {
 
     private static void connect() {
         try {
-            socket = new Socket("localhost", 8080);
+            socket = new Socket("localhost", 8888);
         } catch (IOException e) {
             e.printStackTrace();
         }
