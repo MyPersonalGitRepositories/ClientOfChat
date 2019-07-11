@@ -19,7 +19,7 @@ public class ClientLoader {
     public static void main(String[] args) {
 
         connect();
-        readChat();
+        handle();
         end();
 
     }
